@@ -1,0 +1,23 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: dev
+  annotations:
+    cert-manager.io/cluster-issuer: vault
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: "dev.amoyel.loc"
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: backend
+            port:
+              number: 80
+  tls:
+  - hosts:
+    - "dev.amoyel.loc"
+    secretName: dev-tls
