@@ -1,6 +1,5 @@
 name: dev-back
 autocreate: true
-#image: okteto/golang:1.17
 image: golang:1.18.5-bullseye
 command: bash
 sync:
