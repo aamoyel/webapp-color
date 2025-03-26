@@ -1,0 +1,5 @@
+namespace: webapp-color
+resources:
+  - ns.yaml
+  - deploy.yaml
+  - svc.yaml

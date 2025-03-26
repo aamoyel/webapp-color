@@ -1,4 +1,4 @@
-FROM golang:1.18-alpine3.15 AS builder
+FROM golang:1.23 AS builder
 ENV APP_DIR=/src
 WORKDIR ${APP_DIR}
 COPY . ${APP_DIR}
@@ -8,7 +8,7 @@ RUN CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -ldflags '-extldflag
 
 
 FROM scratch
-LABEL MAINTAINER Author <alan.amoyel@epsi.fr>
+LABEL MAINTAINER Author <alanamoyel06@gmail.com>
 ENV APP_DIR=/src
 
 COPY --from=builder ${APP_DIR} ${APP_DIR}

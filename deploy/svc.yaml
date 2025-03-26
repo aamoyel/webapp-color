@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: backend
+  name: webapp-color
 spec:
   selector:
-    app: backend
+    app: webapp-color
   ports:
   - port: 80
-    targetPort: 80
+    targetPort: http

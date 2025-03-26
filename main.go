@@ -75,7 +75,7 @@ func main() {
 	if exists {
 		appPort = ":" + appPort
 	} else {
-		appPort = ":80"
+		appPort = ":8080"
 	}
 
 	// Check APP_COLOR env var and start webserver
